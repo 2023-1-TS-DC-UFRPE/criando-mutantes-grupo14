@@ -25,7 +25,8 @@ public class ContaEspecial extends Conta {
 	}
 
 	@Override
-	public void creditar(double valor) {
+	public void creditar(valor) {
+		// Erro introduzido: parâmetro sem tipo (double)
 		super.creditar(valor);
 		this.bonus = this.bonus + (valor * 0.01);
 	}
