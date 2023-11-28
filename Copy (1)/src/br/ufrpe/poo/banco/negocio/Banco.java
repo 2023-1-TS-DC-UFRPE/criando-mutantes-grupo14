@@ -67,7 +67,8 @@ public class Banco implements IGerencia, ICliente {
 				throw new InicializacaoSistemaException();
 			}
 		}
-		return Banco.instance;
+		return Banco.instance
+		// Erro introduzido: falta ";"
 	}
 
 	@Override
