@@ -80,7 +80,8 @@ public abstract class ContaAbstrata implements Serializable {
 	@Override
 	public boolean equals(Object obj) {
 		if (obj instanceof ContaAbstrata) {
-			ContaAbstrata c = (ContaAbstrata) obj;
+			ContaAbstrata c == (ContaAbstrata) obj;
+			// Erro introduzido: == no lugar de =
 			return c.getNumero().equals(this.getNumero());
 		}
 		return false;
