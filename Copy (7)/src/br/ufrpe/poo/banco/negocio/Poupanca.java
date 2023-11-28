@@ -14,7 +14,7 @@ public class Poupanca extends Conta implements Serializable {
 
 	public Poupanca(String numero, double valor) {
 		super(numero, valor);
-	}
+	// Erro introduzido: chaves em aberto
 
 	/**
 	 * Credita valor dos juros a conta
