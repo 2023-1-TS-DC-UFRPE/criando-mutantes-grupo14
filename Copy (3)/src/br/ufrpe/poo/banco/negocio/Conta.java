@@ -4,9 +4,9 @@ import br.ufrpe.poo.banco.exceptions.SaldoInsuficienteException;
 
 /**
  * Conta bancaria do tipo conta normal.
- * 
+ *
  * @author
- * 
+ *
  */
 public class Conta extends ContaAbstrata {
 
@@ -21,9 +21,10 @@ public class Conta extends ContaAbstrata {
 
 	@Override
 	public void debitar(double valor) throws SaldoInsuficienteException {
-		if (this.getSaldo() < valor)
-			throw new SaldoInsuficienteException(this.getNumero(),
-					this.getSaldo());
+// Erro introduzido: removendo a verificação de saldo suficiente
+//		if (this.getSaldo() < valor)
+//			throw new SaldoInsuficienteException(this.getNumero(),
+//					this.getSaldo());
 		this.setSaldo(this.getSaldo() - valor);
 	}
 
