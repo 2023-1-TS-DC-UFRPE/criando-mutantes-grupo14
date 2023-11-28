@@ -19,8 +19,8 @@ public class Cliente implements Serializable {
 	/**
 	 * Nome do cliente.
 	 */
-	protected String nome;
-
+	protected string nome;
+	// Erro introduzido: tipo com letra minúscula
 	/**
 	 * Numero do cpf do cliente.
 	 */
