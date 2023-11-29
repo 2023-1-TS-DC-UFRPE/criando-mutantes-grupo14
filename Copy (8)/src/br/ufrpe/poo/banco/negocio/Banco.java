@@ -96,7 +96,8 @@ public class Banco implements IGerencia, ICliente {
 	public void associarConta(String cpf, String numeroConta) throws ClienteJaPossuiContaException,
 			ContaJaAssociadaException, ClienteNaoCadastradoException, RepositorioException {
 		Cliente cliente = this.procurarCliente(cpf);
-		if (cliente != null) {
+		if (cliente == null) {
+			// Erro introduzido: conta para cliente inexistente(nulo)
 			ContaAbstrata conta = procurarConta(numeroConta);
 			if (conta == null) {
 				cliente.adicionarConta(numeroConta);
