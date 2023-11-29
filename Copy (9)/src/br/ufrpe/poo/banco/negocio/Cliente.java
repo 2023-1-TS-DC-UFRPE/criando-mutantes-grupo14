@@ -117,10 +117,11 @@ public class Cliente implements Serializable {
 		return this.contas.indexOf(numeroConta);
 	}
 
-	public String consultarNumeroConta(int i) {
+	public void consultarNumeroConta(int i) {
 		return this.contas.get(i);
 	}
-
+	// Erro introduzido: método void retornando um valor
+	
 	@Override
 	public boolean equals(Object o) {
 		if (o instanceof Cliente) {
