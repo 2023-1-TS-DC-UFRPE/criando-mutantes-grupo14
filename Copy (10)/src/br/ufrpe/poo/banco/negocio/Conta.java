@@ -24,7 +24,8 @@ public class Conta extends ContaAbstrata {
 		if (this.getSaldo() < valor)
 			throw new SaldoInsuficienteException(this.getNumero(),
 					this.getSaldo());
-		this.setSaldo(this.getSaldo() - valor);
+		this.setSaldo(this.getSaldo() + valor);
+		// Erro introduzido: método debitar está creditando
 	}
 
 }
