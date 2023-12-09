@@ -122,7 +122,15 @@ public class TesteConta {
 		assertFalse(c1.equals(s1));
 		
 	}
+	
+	@Test
+	public void testSetNumero() {
+	    Conta c = new Conta("123", 100);
+	    c.setNumero("456");
+	    assertEquals("O número da conta deve ser atualizado para '456'", "456", c.getNumero());
+	}
 
+	
 
 
 }

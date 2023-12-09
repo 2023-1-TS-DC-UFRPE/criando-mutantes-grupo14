@@ -1,5 +1,6 @@
 package br.ufrpe.poo.banco.negocio;
 
+import br.ufrpe.poo.banco.exceptions.ContaNaoEncontradaException;
 import br.ufrpe.poo.banco.exceptions.RepositorioException;
 import br.ufrpe.poo.banco.exceptions.SaldoInsuficienteException;
 import br.ufrpe.poo.banco.exceptions.ValorInvalidoException;
@@ -41,9 +42,10 @@ public interface ICliente {
 	 *             Lancada caso ocorra erro na atualizacao do repositorio.
 	 * @throws ValorInvalidoException
 	 *             Lancada caso o valor do credito seja invalido.
+	 * @throws ContaNaoEncontradaException 
 	 */
 	void creditar(ContaAbstrata conta, double valor)
-			throws RepositorioException, ValorInvalidoException;
+			throws RepositorioException, ValorInvalidoException, ContaNaoEncontradaException;
 
 	/**
 	 * Debita um valor da conta de um cliente.
@@ -59,10 +61,11 @@ public interface ICliente {
 	 *             conta do cliente.
 	 * @throws ValorInvalidoException
 	 *             Lancada caso o valor do debito seja invalido.
+	 * @throws ContaNaoEncontradaException 
 	 */
 	void debitar(ContaAbstrata conta, double valor)
 			throws RepositorioException, SaldoInsuficienteException,
-			ValorInvalidoException;
+			ValorInvalidoException, ContaNaoEncontradaException;
 
 	/**
 	 * Transfere um valor da conta de origem para uma conta de destino.
@@ -80,9 +83,10 @@ public interface ICliente {
 	 *             Lancada caso ocorra erro na atualizacao do repositorio.
 	 * @throws ValorInvalidoException
 	 *             Lancada caso o valor da transferencia seja invalido.
+	 * @throws ContaNaoEncontradaException 
 	 */
 	void transferir(ContaAbstrata contaOrigem, ContaAbstrata contaDestino,
 			double valor) throws SaldoInsuficienteException,
-			RepositorioException, ValorInvalidoException;
+			RepositorioException, ValorInvalidoException, ContaNaoEncontradaException;
 
 }
